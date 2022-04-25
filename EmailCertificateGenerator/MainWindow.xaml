@@ -1,0 +1,33 @@
+﻿<Window x:Class="EmailCertificateGenerator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EmailCertificateGenerator"
+        mc:Ignorable="d"
+        Title="Email Certificate Generator - Developed by Robert Wolf" Height="500" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Content="Email Zertikat Generator" Grid.Column="0" Grid.Row="0"  FontSize="20" FontWeight="Bold" Padding="5"/>
+        <StackPanel  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3">
+            <TextBlock FontSize="18" Padding="5" TextWrapping="Wrap" Text="Im folgenden wird Ihnen ein Email Zertifikat ausgestellt. Die Ausstellung des Zertifikats ist zeitlich begrenzt und wird von keiner öffentlichen Infrastruktur signiert. Prüfen Sie vorab ob ihr Empfänger privat signierte Zertifikate vertraut."/>
+            <Label Content="Organisation:" FontSize="18"/>
+            <TextBox x:Name="edt_company" Text="Ihre Organisation (z.B. Firma GmbH)" Padding="5" Margin="5" BorderThickness="2" BorderBrush="Black" FontSize="18"/>
+            <Label Content="Email:" FontSize="18"/>
+            <TextBox x:Name="edt_email" Text="Email Adresse (z.B. mein.name@firma.de)" Padding="5" Margin="5" BorderThickness="2" BorderBrush="Black" FontSize="18"/>
+            <Label Content="Passwort:" FontSize="18"/>
+            <PasswordBox x:Name="edt_password" PasswordChar="*" Padding="5" Margin="5" BorderThickness="2" BorderBrush="Black" FontSize="18"/>
+            <CheckBox x:Name="chb_importCertificate" Content="Direkter Zertifikats-Import?" FontSize="18" HorizontalAlignment="Right" Padding="5" Margin="5" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+            <Button x:Name="btn_generateCertificate" Content="Zertifikat generieren" Padding="5" Margin="5" FontSize="18" Click="btn_generateCertificate_Click"/>
+        </StackPanel>
+        
+    </Grid>
+</Window>
